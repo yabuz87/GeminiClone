@@ -9,11 +9,12 @@ function Main() {
                 <p>Gemini</p>
                 <img src={assets.user_icon} alt="" />
             </div>
-            <di className="container">
+            <div className="container">
                 <div className="greet">
                     <p><span>Hello,Dev.</span></p>
                     <p>How can i Help you today ?</p>
                 </div>
+                <div className="cards">
                 <div className="card">
                     <p>Suggest Beautiful places to see on an upcoming road trip</p>
                     <img src={assets.compass_icon} alt=""/>
@@ -30,8 +31,21 @@ function Main() {
                     <p>Suggest Beautiful places to see on an upcoming road trip</p>
                     <img src={assets.code_icon} alt=""/>
                 </div>  
-                 
-            </di>
+                </div>
+                 <div className="main-bottom">
+                    <div className="search-box">
+                        <input type="text" placeholder="Ask Gemini"></input>
+                        <div>
+                            <img src={assets.gallery_icon}/>
+                            <img src={assets.mic_icon}/>
+                            <img src={assets.send_icon}/>
+                        </div>
+                    </div>
+                    <p className="bottom-info">
+                        Gemini can mistakes, so double-check it 
+                    </p>
+                 </div>
+            </div>
         </div>
     )
 }
