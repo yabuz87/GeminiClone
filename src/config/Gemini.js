@@ -1,13 +1,13 @@
-// const APIkey="AIzaSyDRfYVgCoZDy-pW40O9Bu7gL2FR0PwYppA";
-const {
+import {
   GoogleGenerativeAI,
   HarmCategory,
   HarmBlockThreshold,
-} = require("@google/generative-ai");
+} from "@google/generative-ai";
 
-const apiKey = process.env.GEMINI_API_KEY;
+// const APIkey="AIzaSyDRfYVgCoZDy-pW40O9Bu7gL2FR0PwYppA";
+const apiKey ="AIzaSyDRfYVgCoZDy-pW40O9Bu7gL2FR0PwYppA";
 const genAI = new GoogleGenerativeAI(apiKey);
-const API_KEY="AIzaSyDRfYVgCoZDy-pW40O9Bu7gL2FR0PwYppA";
+
 const model = genAI.getGenerativeModel({
   model: "gemini-1.5-pro",
 });
@@ -20,15 +20,15 @@ const generationConfig = {
   responseMimeType: "text/plain",
 };
 
-async function run() {
+async function run(prompt) {
   const chatSession = model.startChat({
     generationConfig,
     history: [
     ],
   });
 
-  const result = await chatSession.sendMessage("INSERT_INPUT_HERE");
+  const result = await chatSession.sendMessage(prompt);
   console.log(result.response.text());
 }
 
-run();
+ export default run;
