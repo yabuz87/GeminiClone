@@ -1,8 +1,10 @@
-import React from 'react'
+import React,{useContext} from 'react'
+import {Context} from "../../context/Context"
 import {assets} from "../../assets/assets"
 import "./main.css"
 
 function Main() {
+    const {prevPrompt,onSent,setPrevPrompt,recent,setRecent,loading,setLoading,input,setInput,result,setResult}=useContext();
     return (
         <div className="main">
             <div className="nav">
@@ -34,7 +36,7 @@ function Main() {
                 </div>
                  <div className="main-bottom">
                     <div className="search-box">
-                        <input type="text" placeholder="Ask Gemini"></input>
+                        <input onChange={(e)=>setInput(e.target.value)} type="text" value={input} placeholder="Ask Gemini"></input>
                         <div>
                             <img src={assets.gallery_icon}/>
                             <img src={assets.mic_icon}/>
